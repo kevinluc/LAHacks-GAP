@@ -61,7 +61,7 @@
     </nav>
 
     <!-- Page Content -->
-   <div class="container">
+    <div class="container">
 
         <!-- Page Heading -->
         <div class="row">
@@ -76,16 +76,73 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-3 portfolio-item">
-                 <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>       <!--this is the id^^^ needs php to echo-->
+                 <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+	    <?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?>
+</div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>       <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 2; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 3; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>       <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 4; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>       <!--this is the id^^^ needs php to echo-->
             </div>
         </div>
         <!-- /.row -->
@@ -93,16 +150,71 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>      <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 5; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>      <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 6; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 7; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 8; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
         </div>
         <!-- /.row -->
@@ -110,16 +222,59 @@
         <!-- Projects Row -->
         <div class="row">
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 9; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 10; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<?php 
+	       $db_connection = mysql_connect("localhost", "root", "password");
+	       if(!$db_connection) { echo " Could not connect \n";}
+	       mysql_select_db("contest", $db_connection);
+	       $results = mysql_query("SELECT url FROM leaderboard order by likes desc", $db_connection);
+	       if ($results) {
+               for ($x = 0; $x < 11; $x++)
+				 $row = mysql_fetch_row($results);
+
+				 echo "<iframe src='"."$row[0]"."embed/' frameborder='0' scrolling='no' allowtransparency='true'></iframe>";
+				 }
+				 mysql_close($db_connection); 
+				 //echo "http://instagram.com/p/dnQi4EGuZx/embed/";
+				 ?></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
             <div class="col-md-3 portfolio-item">
-                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></iframe></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
+                <style>.embed-container {position: relative; padding-bottom: 120%; height: 0; overflow: hidden;} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
+<iframe src='http://instagram.com/p/dnQi4EGuZx/embed/' frameborder='0' scrolling='yes' allowtransparency='true'></div><a class="btn btn-primary" href="#">Select <span class="glyphicon glyphicon-chevron-right"></span></a>        <!--this is the id^^^ needs php to echo-->
             </div>
         </div>
         <!-- /.row -->
